@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { title } from 'framer-motion/client';
 import {SlShareAlt} from 'react-icons/sl'
+import { link } from 'framer-motion/client';
 // import { horizontal } from 'gsap/Observer.js';
 
 
@@ -21,23 +22,27 @@ const ProjectSection = () => {
 const projectImages = [
   {
     id: 1,
-    title: '3d Gaming website',
+    title : 'Mixture of Experts',
     imageSrc: "/images/project-1.png",
+    link: "https://github.com/PrathamMaheshwari-hub/MixtureofExperts-forText-Summarization"
   },
   {
     id: 2,
-    title: 'startup App',
+    title: 'P2P File Sharing System',
     imageSrc: "/images/project-2.png",
+    link: "https://github.com/PrathamMaheshwari-hub/NFS-final-master"
   },
   {
     id: 3,
-    title: 'Portfolio website',
+    title: 'Transformer Arthmetic Solver',
     imageSrc: "/images/project-3.png",
+      link: "https://github.com/PrathamMaheshwari-hub/Transformer_implementation-master"
   },
   {
     id: 4,
     title: 'Awward Winning web',
     imageSrc: "/images/project-4.png",
+    link: "https://github.com/PrathamMaheshwari-hub/portfolio "
   },
 ]
 
@@ -206,12 +211,19 @@ gsap.fromTo(
 
           src={project.imageSrc}
           alt={project.title}
+          
           />
-
+           
         <h2 className='project-title flex items-center gap-3 md:text-3xl text-sm md:font-bold text-black mt-6 z-50 text-colors duration-300 cursor-pointer  '>
 
-          {project.title} <SlShareAlt/>
+         
+           <button onClick={() => window.open(project.link, "_blank")} >
+                  {project.title}
+           </button>
+          
+           <SlShareAlt/>
         </h2>
+
 
         </div>
 
